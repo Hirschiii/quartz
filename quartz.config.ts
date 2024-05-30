@@ -8,15 +8,15 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "Hirschiis Space",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    locale: "de-DE",
+    baseUrl: "vonhirschfeld.eu/niklas",
+    ignorePatterns: ["private", "templates", ".obsidian", "**/private"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
@@ -70,7 +70,9 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-    filters: [Plugin.RemoveDrafts()],
+    filters: [
+	  Plugin.ExplicitPublish(),
+		],
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
